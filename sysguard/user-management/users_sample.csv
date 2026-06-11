@@ -1,0 +1,9 @@
+# SysGuard Bulk User Provisioning CSV
+# Format: username,groups,ssh_key_path,sudo_access(yes/no),comment
+# Lines starting with # are ignored
+#
+# username      , groups            , ssh_key_path                        , sudo , comment
+alice           , sudo,developers   , /etc/sysguard/ssh_keys/alice.pub    , yes  , Lead Developer
+bob             , developers        , /etc/sysguard/ssh_keys/bob.pub      , no   , Junior Developer
+charlie         , sysadmin,sudo     , /etc/sysguard/ssh_keys/charlie.pub  , yes  , System Administrator
+diana           , monitoring        , -                                   , no   , Monitoring User (no SSH)

@@ -1,0 +1,53 @@
+# =============================================================================
+# SysGuard Configuration Template
+# Copy this file to sysguard.conf and edit your values
+# =============================================================================
+
+ALERT_EMAIL="admin@example.com"
+
+CPU_THRESHOLD=85
+MEM_THRESHOLD=80
+DISK_THRESHOLD=90
+
+LOG_FILE="/var/log/sysguard/monitor.log"
+SERVICE_LOG_FILE="/var/log/sysguard/services.log"
+USER_MGMT_LOG="/var/log/sysguard/user_mgmt.log"
+BACKUP_LOG="/var/log/sysguard/backup.log"
+ROTATION_LOG="/var/log/sysguard/rotation.log"
+
+RETENTION_DAYS=30
+MAX_LOG_SIZE_MB=100
+COMPRESS_LOGS=true
+
+APP_LOG_DIRS=(
+    "/var/log/nginx:14"
+    "/var/log/apache2:14"
+)
+
+MONITORED_SERVICES=(
+    "nginx"
+    "sshd"
+    "cron"
+)
+
+AUTO_RESTART=true
+MAX_RESTARTS=3
+
+DEFAULT_SHELL="/bin/bash"
+DEFAULT_UMASK="027"
+
+BACKUP_DEST="/var/backups/sysguard"
+BACKUP_RETENTION_DAYS=30
+SEND_SUCCESS_REPORT=false
+
+BACKUP_SOURCES=(
+    "/etc:etc_config"
+    "/home:home_dirs"
+)
+
+BACKUP_EXCLUDES=(
+    "*.tmp"
+    "*.log"
+    ".cache"
+    "node_modules"
+)

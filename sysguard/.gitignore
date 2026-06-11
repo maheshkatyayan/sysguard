@@ -1,0 +1,5 @@
+logs/
+*.log
+*.log.gz
+*.bak
+/config/sysguard.conf
